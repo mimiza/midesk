@@ -1,5 +1,6 @@
 import Gun from 'gun'
-import SEA from 'gun/sea'
+import 'gun/sea'
+import 'gun/lib/webrtc'
 import Vue from 'vue'
 import VueGun from 'vue-gun'
 import App from './App.vue'

@@ -2,7 +2,7 @@
     <div id="sign-in" class="ui container">
 		<form @submit.prevent="signIn" class="ui attached form">
             <div class="ui attached message">
-    			<div class="header">Welcome to Mimiza!</div>
+    			<div class="header">Welcome to miDesk!</div>
     			<p>Fill out the form below to sign-in.</p>
     		</div>
             <div v-if="errors.length" class="ui attached negative message">

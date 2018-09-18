@@ -1,6 +1,6 @@
 <template>
     <div id="footer" class="ui center aligned container">
-        © {{ year }} Mimiza All Rights Reserved
+        © {{ year }} Powered by <a href="https://www.github.com/mimiza/midesk/">miDesk</a>
     </div>
 </template>
 

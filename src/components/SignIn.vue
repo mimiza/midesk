@@ -64,17 +64,22 @@
                 if (!this.password || this.password.length < 8) this.errors.push('Your password must contain at least 8 characters.')
 
                 if (!this.errors.length) {
-					if (this.remember) this.$user.recall({sessionStorage: true})
                     this.$user.auth(this.username, this.password, (ack) => {
                         if (ack.err) this.errors.push(ack.err)
-                        else this.$router.push('/desk') // redirect to /desk
+                        else {
+							if (this.remember) {
+								localStorage.remember = true // remember user access
+								localStorage.alias = sessionStorage.alias
+								localStorage.tmp = sessionStorage.tmp
+							}
+							this.$router.push('/desk') // redirect to /desk
+						}
                     })
                 }
-
             } //end of signUp
         },
 		mounted() {
-			if (sessionStorage.alias && sessionStorage.tmp) this.$user.recall({sessionStorage: true})
+			if (localStorage.remember) this.$user.recall({sessionStorage: true})
 			if (this.$user.is) this.$router.push('/desk')
 		}
     }

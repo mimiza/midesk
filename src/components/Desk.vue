@@ -15,25 +15,17 @@
 				email: null
 			}
 		},
-		methods: {
-			test: function() {
-				this.$user.auth('inanobot', 'toilatyphu', (ack) => {
-					this.$user.get('profile').once((ack) => {
-						this.name = ack.name
-						this.username = ack.username
-						this.email = ack.email
-					})
-				})
-
-				// this.$user.get('profile').once(function(ack) {
-				// 	this.name = ack.name
-				// })
-			}
-		},
 		mounted() {
 			this.$user.recall({sessionStorage: true})
 			if (!this.$user.is) { // not logged in
-				console.log('not logged in')
+				this.$router.push('/sign-in')
+			}
+			else {
+				this.$user.get('profile').once((ack) => {
+					this.name = ack.name
+					this.username = this.$user.is.alias
+					this.email = ack.email
+				})
 			}
 		}
 	}

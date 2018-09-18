@@ -75,7 +75,7 @@
         },
 		mounted() {
 			if (sessionStorage.alias && sessionStorage.tmp) this.$user.recall({sessionStorage: true})
-			if (this.$user.is) this.$route.push('/desk')
+			if (this.$user.is) this.$router.push('/desk')
 		}
     }
 </script>

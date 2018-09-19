@@ -1,5 +1,8 @@
 <template>
     <div id="sign-up" class="ui container">
+		<div class="ui center aligned container">
+			<img class="brand" src="../assets/mmz-brand-symbol-blue.svg"/>
+		</div>
 		<form @submit.prevent="signUp" class="ui attached form">
             <div class="ui attached message">
     			<div class="header">Welcome to miDesk!</div>
@@ -153,8 +156,8 @@
     }
 </script>
 
-<style scoped>
-    #sign-up {
-        width: 500px;
-    }
+<style>
+.brand {
+	margin: 15px auto;
+}
 </style>

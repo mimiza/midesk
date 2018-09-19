@@ -1,13 +1,16 @@
 <template>
-	<div class="ui fluid container">
-		<h1>Welcome back, {{ name }}!</h1>
-		<p>Username: {{ username }}</p>
-		<p>Your email is: {{ email }}</p>
+	<div>
+		<Header v-bind:username="username"></Header>
 	</div>
 </template>
 
 <script>
+	import Header from './Header.vue'
+
 	export default {
+		components: {
+			Header: Header
+		},
 		data() {
 			return {
 				name: null,

@@ -1,5 +1,8 @@
 <template>
     <div id="sign-in" class="ui container">
+		<div class="ui center aligned container">
+			<img class="brand" src="../assets/mmz-brand-symbol-blue.svg"/>
+		</div>
 		<form @submit.prevent="signIn" class="ui attached form">
             <div class="ui attached message">
     			<div class="header">Welcome to miDesk!</div>
@@ -82,7 +85,7 @@
 				})
 			}
         },
-		beforeMount() {
+		created() {
 			let alias = localStorage.getItem('alias')
 			let tmp = localStorage.getItem('tmp')
 			let remember = localStorage.getItem('remember')
@@ -92,8 +95,6 @@
 				sessionStorage.setItem('tmp', tmp)
 				this.authenticate(alias, tmp)
 			}
-		},
-		mounted() {
 			if (sessionStorage.getItem('alias') && sessionStorage.getItem('tmp')) {
 				this.$user.recall({sessionStorage: true})
 			}
@@ -104,8 +105,8 @@
     }
 </script>
 
-<style scoped>
-    #sign-in {
-        width: 500px;
+<style>
+    .brand {
+    	margin: 15px auto;
     }
 </style>

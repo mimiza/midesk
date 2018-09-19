@@ -64,23 +64,42 @@
                 if (!this.password || this.password.length < 8) this.errors.push('Your password must contain at least 8 characters.')
 
                 if (!this.errors.length) {
-                    this.$user.auth(this.username, this.password, (ack) => {
-                        if (ack.err) this.errors.push(ack.err)
-                        else {
-							if (this.remember) {
-								localStorage.remember = true // remember user access
-								localStorage.alias = sessionStorage.alias
-								localStorage.tmp = sessionStorage.tmp
-							}
-							this.$router.push('/desk') // redirect to /desk
-						}
-                    })
+					this.authenticate(this.username, this.password)
                 }
-            } //end of signUp
+            },
+			authenticate(username, password) {
+				this.errors = []
+				this.$user.auth(username, password, (ack) => {
+					if (ack.err) this.errors.push(ack.err)
+					else {
+						if (this.remember) {
+							localStorage.setItem('remember', this.remember) // remember user access
+							localStorage.setItem('alias', this.username)
+							localStorage.setItem('tmp', this.password)
+						}
+						this.$router.push('/desk') // redirect to /desk
+					}
+				})
+			}
         },
+		beforeMount() {
+			let alias = localStorage.getItem('alias')
+			let tmp = localStorage.getItem('tmp')
+			let remember = localStorage.getItem('remember')
+
+			if (alias && tmp && remember && !this.$user.is) {
+				sessionStorage.setItem('alias', alias)
+				sessionStorage.setItem('tmp', tmp)
+				this.authenticate(alias, tmp)
+			}
+		},
 		mounted() {
-			if (localStorage.remember) this.$user.recall({sessionStorage: true})
-			if (this.$user.is) this.$router.push('/desk')
+			if (sessionStorage.getItem('alias') && sessionStorage.getItem('tmp')) {
+				this.$user.recall({sessionStorage: true})
+			}
+			if (this.$user.is) { // user signed in
+				this.$router.push('/desk')
+			}
 		}
     }
 </script>

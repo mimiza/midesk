@@ -16,7 +16,6 @@
 			}
 		},
 		mounted() {
-			this.$user.recall({sessionStorage: true})
 			if (!this.$user.is) { // not logged in
 				this.$router.push('/sign-in')
 			}

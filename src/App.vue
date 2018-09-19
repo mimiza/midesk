@@ -19,12 +19,7 @@
         components: {
             'Header': Header,
             'Footer': Footer
-        },
-		mounted() {
-			if (sessionStorage.alias && sessionStorage.tmp) {
-				this.$user.recall({sessionStorage: true})
-			}
-		}
+        }
     }
 </script>
 

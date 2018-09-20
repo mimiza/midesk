@@ -13,6 +13,8 @@ We use GunDB, a decentrialized graph database, which means each client is a serv
 ## How about security?
 Although each client could have a full copy of the whole database, all data is encrypted using Public/Private key encryption. The only way to decrypt a piece of data is using the private key that belongs to the same pair with the public key used to encrypt that piece of data. It takes 100+ years to bruteforce an encrypted piece of data.
 
+Only you have access to your data. There is no one, even the creators of the system can read your data.
+
 ## How to install
 ``` bash
 # install dependencies
@@ -33,7 +35,7 @@ npm run build
 ## Documentations
 - GunDB: A realtime-decentrialized-graph database written in JS. Docs: [https://gun.eco/docs]
 - VueJS: A view framework that helps building SPA shorter and faster. Docs [https://vuejs.org/v2/guide/]
-- Vue Loader: For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- Vue Loader: For detailed explanation on how things work, consult the [http://vuejs.github.io/vue-loader]
 - Semantic UI: A UI framework that uses natural human language class names. Docs [https://semantic-ui.com/introduction/getting-started.html]
 
 ## Join the Community

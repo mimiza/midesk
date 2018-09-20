@@ -19,10 +19,6 @@ Only you have access to your data. There is no one, even the creators of the sys
 ``` bash
 # install dependencies
 npm install
-# build semantic
-cd semantic/
-gulp build
-cd ..
 # run
 ## dev environment with hot reload at localhost:8080
 npm run dev
@@ -34,10 +30,10 @@ npm run build
 
 ## Documentations
 - GunDB: A realtime-decentrialized-graph database written in JS. Docs: [https://gun.eco/docs]
-- VueJS: A view framework that helps building SPA shorter and faster. Docs [https://vuejs.org/v2/guide/]
+- VueJS: A view framework that helps building SPA shorter and faster. Docs: [https://vuejs.org/v2/guide/]
 - Vue Loader: For detailed explanation on how things work, consult the [http://vuejs.github.io/vue-loader]
 - Semantic UI: A UI framework that uses natural human language class names. Docs [https://semantic-ui.com/introduction/getting-started.html]
+- Semantic UI Vue: Docs [https://semantic-ui-vue.github.io]
 
 ## Join the Community
 - Chatroom: [https://gitter.im/mimiza/midesk]
-

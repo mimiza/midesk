@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<Header v-bind:username="username"></Header>
-		<router-view></router-view>
+		<main><router-view></router-view></main>
 	</div>
 </template>
 

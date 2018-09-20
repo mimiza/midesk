@@ -20,6 +20,10 @@
 	    background: #eeeeee;
     }
 
+	main {
+		margin-top: 30px;
+	}
+
     #sign-in, #sign-up {
     	width: 500px;
     }

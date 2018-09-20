@@ -1,11 +1,14 @@
 <template>
     <div class="ui container">
-		<form class="ui attached form">
+		<form class="ui form">
+			<div class="ui attached message">
+    			<div class="header">Your profile</div>
+    		</div>
 			<div class="ui fluid attached segment">
 				<div class="field">
 					<label>Name</label>
 					<div class="ui left icon input">
-						<input type="text" v-model="name" name="name" placeholder="John Smith">
+						<input type="text" v-model="name" name="name" placeholder="John Smith" disabled>
 						<i class="user icon"></i>
 					</div>
 				</div>
@@ -13,14 +16,14 @@
 					<div class="field">
 						<label>Username</label>
 						<div class="ui left icon input">
-							<input type="text" v-model="username" name="username" placeholder="johnsmith">
+							<input type="text" v-model="username" name="username" placeholder="johnsmith" disabled>
 							<i class="user icon"></i>
 						</div>
 					</div>
 					<div class="field">
 						<label>Email</label>
 						<div class="ui left icon input">
-							<input type="text" v-model="email" name="email" placeholder="myemail@gmail.com">
+							<input type="text" v-model="email" name="email" placeholder="myemail@gmail.com" disabled>
 							<i class="envelope icon"></i>
 						</div>
 					</div>

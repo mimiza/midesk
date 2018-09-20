@@ -1,13 +1,15 @@
 <template>
 	<header class="ui middle aligned grid navHeader">
-		<div class="row" style="padding-bottom: 0px;">
+		<div class="ui row">
 			<div class="left aligned three wide column">
 				<button class="ui basic tiny icon button" style="margin-left: 5px; border:0px;">
 					<i class="icon bars"></i>
 				</button>
 			</div>
 			<div class="center aligned ten wide column">
-				<img class="brand" src="../assets/mmz-brand-symbol-text-blue.svg">
+				<router-link to="/desk">
+					<img class="brand" src="../assets/mmz-brand-symbol-text-blue.svg">
+				</router-link>
 			</div>
 			<div class="right aligned three wide column">
 				<span class="username">{{ username }}</span>
@@ -39,10 +41,13 @@
 	}
 </script>
 
-<style scoped>
+<style>
+	header {
+		margin-bottom: 30px;
+	}
+
 	.navHeader {
 		background: #ffffff;
-		padding-bottom: 0px !important;
 	}
 
 	.brand {

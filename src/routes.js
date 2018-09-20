@@ -3,6 +3,7 @@ import SignIn from './components/SignIn.vue'
 import SignUp from './components/SignUp.vue'
 import PasswordRecovery from './components/PasswordRecovery.vue'
 import Desk from './components/Desk.vue'
+import Profile from './components/Profile.vue'
 
 export default [
     {
@@ -23,6 +24,12 @@ export default [
     },
 	{
 		path: '/desk',
-		component: Desk
+		component: Desk,
+		children: [
+			{
+				path: 'profile',
+				component: Profile
+			}
+		]
 	}
 ]

@@ -11,9 +11,11 @@
 			</div>
 			<div class="right aligned three wide column">
 				<span class="username">{{ username }}</span>
-				<button class="ui basic tiny circular icon button">
-					<i class="icon user"></i>
-				</button>
+				<router-link to="/desk/profile">
+					<button class="ui basic tiny circular icon button">
+						<i class="icon user"></i>
+					</button>
+				</router-link>
 				<button v-on:click="signOut" class="ui basic tiny circular icon button">
 					<i class="icon sign-out"></i>
 				</button>

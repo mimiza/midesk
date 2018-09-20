@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<Header v-bind:username="username"></Header>
+		<router-view></router-view>
 	</div>
 </template>
 
@@ -20,7 +21,8 @@
 		},
 		mounted() {
 			if (!this.$user.is) { // not logged in
-				this.$router.push('/sign-in')
+				this.$user.recall({sessionStorage: true})
+				//this.$router.push('/sign-in')
 			}
 			else {
 				this.$user.get('profile').once((ack) => {

@@ -1,9 +1,17 @@
-# midesk
+# WHAT IS MIDESK
 
-> Open source membership platform written in NodeJS, using GunDB, VueJS, Semantic UI
+> miDesk is an open source platform for selling membership and software subscriptions. It is written in NodeJS, using GunDB, VueJS, Semantic UI. This software is licensed under MIT license, that means you can do anything you want with it.
+
+We aim to make it a NodeJS Decentrialized SAAS boilerplate in the future.
 
 ## This is a work in process
 This project has just begun, many features are being built. We have no official release yet. If you are interested in giving contributions, feel free to send pull requests.
+
+## There is no centrialized server
+We use GunDB, a decentrialized graph database, which means each client is a server by itself and can contain a full copy of the whole database. There is no centrialized server. And if you are new to these words like P2P, Public/Private keys etc... please do some Google as well as reading GunDB docs.
+
+## How about security?
+Although each client could have a full copy of the whole database, all data is encrypted using Public/Private key encryption. The only way to decrypt a piece of data is using the private key that belongs to the same pair with the public key used to encrypt that piece of data. It takes 100+ years to bruteforce an encrypted piece of data.
 
 ## How to install
 ``` bash

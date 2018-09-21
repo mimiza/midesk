@@ -1,8 +1,11 @@
 export default [
 	{
 		text: "Awesome Item Name",
-		value: "awesomecodename",
+		value: 0,
+		name: "Awesome Item Name",
+		codename: "awesomeitem",
 		description: "Lorem ipsum dolor sit amet",
+		currency: "USD",
 		pricings: [
 			{
 				minDuration: 1,
@@ -25,24 +28,27 @@ export default [
 			{
 				name: "Monthly",
 				description: "Pay once a month",
-				duration: 1
+				duration: "1"
 			},
 			{
-				name: "Semi-anually",
+				name: "Semi-annually",
 				description: "For pro folks",
-				duration: 7
+				duration: "6"
 			},
 			{
-				name: "Plan 3",
+				name: "Annually",
 				description: "Plan 3 is awesome man!",
-				minDuration: 10
+				duration: "12"
 			}
 		]
 	},
 	{
 		text: "Facebook Smasher",
-		value: "facebooksmasher",
+		value: 1,
+		name: "Facebook Smasher",
+		codename: "fbsmash",
 		description: "Awesome facebook inbox sender",
+		currency: "USD",
 		pricings: [
 			{
 				minDuration: 1,
@@ -65,17 +71,17 @@ export default [
 			{
 				name: "Monthly",
 				description: "Pay once a month",
-				duration: 1
+				duration: "1"
 			},
 			{
-				name: "Semi-anually",
+				name: "Semi-annually",
 				description: "For pro folks",
-				duration: 7
+				duration: "6"
 			},
 			{
-				name: "Plan 3",
-				description: "Plan 3 is awesome man!",
-				minDuration: 10
+				name: "Annually",
+				description: "Best option for agencies",
+				duration: "12"
 			}
 		]
 	}

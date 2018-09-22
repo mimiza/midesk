@@ -1,30 +1,46 @@
 <template>
-    <div class="ui container">
-        <h1>Please choose an item</h1>
-		<sui-dropdown
+    <div id="order" class="ui container">
+        <div class="ui center aligned container">
+			<img class="brand" src="../assets/mmz-brand-symbol-blue.svg"/>
+		</div>
+        <div class="ui attached message">
+			<div class="header">Order</div>
+		</div>
+        <div class="ui attached segment">
+            <div v-if="!codename" class="ui pointing below green label">Please choose an item</div>
+            <sui-dropdown
             placeholder="Select Item"
             selection
+            fluid
             :options="data"
             v-model="item"
-		/>
-        <h2>{{name}}</h2>
-        <p>{{description}}</p>
-        <sui-checkbox
-            v-if="plans"
-            v-for="plan in plans"
-            :label="plan.name"
-            :key="plan.codename"
-            radio
-            :value="plan.duration"
-            v-model="duration"
-        />
-        <br />
-        <b v-if="duration">Duration: {{duration}}</b><br />
-        <div v-if="duration">
-            <b>Price/month: {{price}} {{currency}}/month</b><br />
+            />
+            <div v-if="codename" class="ui message">
+                {{description}}
+            </div>
+        </div>
+        <div v-if="codename" class="ui attached segment">
+        <sui-form>
+                <sui-form-fields inline>
+                <label>Please choose a plan</label>
+                <sui-form-field v-if="plans" v-for="plan in plans">
+                    <sui-checkbox
+                        :label="plan.name"
+                        :key="plan.codename"
+                        radio
+                        :value="plan.duration"
+                        v-model="duration"
+                    />
+                </sui-form-field>
+            </sui-form-fields>
+        </sui-form>
+        </div>
+        <div v-if="duration" class="ui attached segment">
+            <b>Price: {{price}} {{currency}}/month</b><br />
             <b>Total: {{total}} {{currency}}</b>
-            <div class="paypal">
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        </div>
+		<div v-if="duration" class="ui attached segment">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_xclick-subscriptions">
                 <input type="hidden" name="business" value="4Y98X8RR9PAGQ">
                 <input type="hidden" name="lc" value="VN">
@@ -40,11 +56,12 @@
                 <input type="hidden" name="callback_url" value="">
                 <input type="hidden" name="return" value="">
                 <input type="hidden" name="cancel_return" value="">
-                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribe_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                </form>
-            </div>
-        </div>
+                <button name="submit" class="ui labeled icon primary fluid submit button"><i class="icon sign-in"></i>Pay with Paypal</button>
+            </form>
+		</div>
+		<div class="ui bottom attached message">
+
+		</div>
 	</div>
 </template>
 
@@ -87,4 +104,11 @@
                 this.currency = data.currency
             }
         }
-	}</script>
+	}
+</script>
+
+<style scoped>
+#order {
+    width: 500px;
+}
+</style>

@@ -3,7 +3,7 @@
 		<div class="ui center aligned container">
 			<img class="brand" src="../assets/mmz-brand-symbol-blue.svg"/>
 		</div>
-		<form @submit.prevent="signUp" class="ui attached form">
+		<form @submit.prevent="signUp" class="ui form">
             <div class="ui attached message">
     			<div class="header">Welcome to miDesk!</div>
     			<p>Fill out the form below to sign-up for a new account.</p>

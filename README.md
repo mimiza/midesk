@@ -1,3 +1,5 @@
+# THIS PROJECT IS ABANDONED!
+
 # WHAT IS MIDESK
 
 > miDesk is an open source platform for selling membership and software subscriptions. It is written in NodeJS, using GunDB, VueJS, Semantic UI. This software is licensed under MIT license, that means you can do anything you want with it.
